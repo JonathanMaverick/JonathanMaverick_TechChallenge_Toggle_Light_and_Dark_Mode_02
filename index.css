@@ -1,0 +1,57 @@
+:root {
+--light-bg-mode: #f2f2f2;
+--light-text-mode: #333; 
+--dark-bg-mode: #1a1a1a; 
+--dark-text-mode: #f2f2f2; 
+}
+  
+body {
+    background-color: var(--light-bg-mode);
+    color: var(--light-text-mode);
+    transition: background-color 0.5s ease, color 0.5s ease; 
+    display: flex;
+}
+  
+.container h1, p {
+    margin: 0 0 20px;
+}
+  
+.mode-switch {
+    display: flex;
+    align-items: center;
+}
+  
+label {
+    margin-right: 10px;
+}
+  
+input[type="checkbox"] {
+    height: 20px;
+    width: 40px;
+    appearance: none;
+    background-color: gray;
+    border-radius: 20px;
+    position: relative;
+}
+  
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
+    background-color: black;
+}
+  
+.dark-mode {
+    background-color: var(--dark-bg-mode);
+    color: var(--dark-text-mode);
+}
